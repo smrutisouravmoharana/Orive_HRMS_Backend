@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.orive.hrm</groupId>
+    <artifactId>orive-hmr-backend</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>orive-hmr-backend</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>17</java.version>
+        <spring-cloud.version>2022.0.4</spring-cloud.version>
+    </properties>
+
+    <modules>
+        <module>Organisation</module>
+        <module>Procurement</module>
+        <module>TimeSheet</module>
+        <module>Interview-scheduler</module>
+        <module>Accounts</module>
+        <module>Employee</module>
+        <module>Bank</module>
+        <module>Loan</module>
+        <module>Performance</module>
+        <module>Payroll</module>
+        <module>Projects</module>
+        <module>Tickets</module>
+        <module>Sale</module>
+        <module>Orive_Website</module>
+        <module>Hrm-Gateway</module>
+        <module>Hrm-Service-Registry</module>
+
+    </modules>
+
+</project>

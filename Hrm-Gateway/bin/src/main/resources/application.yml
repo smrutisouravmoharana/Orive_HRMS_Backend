@@ -1,0 +1,76 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: HRM-GATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id: BANK-SERVICE
+        uri: lb://BANK-SERVICE
+        predicates:
+          - Path=/addbank/**
+      - id: ORGANISATION-SERVICE
+        uri: lb://ORGANISATION-SERVICE
+        predicates:
+          - Path=/company/**,/announcement/**,/department/**,/designation/**,/expence/**,/expencelist/**,/location/**,/policies/**
+      - id: EMPLOYEE-SERVICE
+        uri: lb://EMPLOYEE-SERVICE
+        predicates:
+          - Path=/awards/**,/companystationary/**,/complaints/**,/employee/**,/employee_exit/**,/promotions/**,/resignation/**,/termination/**,/transfers/**,/travels/**,/warnings/**
+      - id: LOAN-SERVICE
+        uri: lb://LOAN-SERVICE
+        predicates:
+          - Path=/grantloan/**
+      - id: PARFORMANCE-SERVICE
+        uri: lb://PARFORMANCE-SERVICE
+        predicates:
+          - Path=/performanceappraisal/**
+      - id: PAYROLL-SERVICE
+        uri: lb://PAYROLL-SERVICE
+        predicates:
+          - Path=/advancesalery/**,/salaryTemplate/**,/payslipgenerate/**
+      - id: PROJECTS-SERVICE
+        uri: lb://PROJECTS-SERVICE
+        predicates:
+          - Path=/projects/**
+      - id: TICKETS-SERVICE
+        uri: lb://TICKETS-SERVICE
+        predicates:
+          - Path=/tickets/**
+      - id: WORKSHEET-SERVICE
+        uri: lb://WORKSHEET-SERVICE
+        predicates:
+          - Path=/worksheet/**
+      - id: ACCOUNTS-SERVICE
+        uri: lb://ACCOUNTS-SERVICE
+        predicates:
+          - Path=/accountbalance/**,/accountlist/**,/contravoucher/**,/creditvoucher/**,/debitvoucher/**,/financialyear/**,/journalvoucher/**,/openingbalance/**,/subtype/** 
+      - id: PROCUREMENT-SERVICE
+        uri: lb://PROCUREMENT-SERVICE
+        predicates:
+          - Path=/bidAnalysis/**,/committeelist/**,/committees/**,/companylist/**,/goodreceived/**,/goodreceivedlist/**,/purchaseOrder/**,/purchaseorderlist/**,/quotation/**,/quotationlist/**,/request/**,/units/**,/vendor/** 
+      - id: TIMESHEET-SERVICE
+        uri: lb://TIMESHEET-SERVICE
+        predicates:
+          - Path=/attendance/**,/holidays/**,/leaves/**,/officeshifts/**
+      - id: TRAINING-SERVICE
+        uri: lb://TRAINING-SERVICE
+        predicates:
+          - Path=/trainerslist/**
+      - id: EVENT-SERVICE
+        uri: lb://EVENT-SERVICE
+        predicates:
+          - Path=/event/**
+      - id: INTERVIEW-SCHEDULER
+        uri: lb://INTERVIEW-SCHEDULER
+        predicates:
+          - Path=/candidates/**,/interviews/**,/talents/**,/users/**                     
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka             

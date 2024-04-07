@@ -1,0 +1,54 @@
+aes:
+  encryption:
+    key: this-is-test-key
+spring:
+  datasource:
+    url: jdbc:mysql://database-1.cn86imikwaj5.ap-south-1.rds.amazonaws.com:3306/orivehrm
+    username: oriveadmin
+    password: orivedb2628
+#    url: jdbc:mysql://localhost:3306/orivehrm
+#    username: root
+#    password: Orive@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: BANK-SERVICE
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#  security:
+#     oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8080/realms/myrealm
+#          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs    
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8092
+#jwt:
+#  auth:
+#    converter:
+#      resource-id: myclient
+#      principle-attribute: preferred_username
+#twilio:
+#  account:
+#    sid: AC9ce2e24fa85428c738462b5df8f468f4
+#  auth:
+#    token: 5687db3b8099c45c79499fd8985c3caf
+#  from:
+#    number: +16502001838
+  
+

@@ -1,0 +1,5 @@
+package com.orive.Organisation.Entity;
+
+public class CompanyEntity {
+
+}

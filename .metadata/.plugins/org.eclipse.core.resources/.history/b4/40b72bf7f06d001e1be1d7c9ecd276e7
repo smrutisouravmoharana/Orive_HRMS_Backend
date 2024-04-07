@@ -1,0 +1,56 @@
+package com.orive.Organisation.Entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
+@Table(name = "company_details")
+public class CompanyEntity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int companyId;
+
+	@Column(name = "company_name")
+	private String companyName;
+	
+	@Column(name = "company_type")
+	private String companyType;
+	
+	@Column(name = "legal_or_tranding_name")
+	private String legalOrTrandingName;
+	
+	@Column(name = "registration_number")
+	private String registrationNumber;
+	
+	@Column(name = "contact_number")
+	private Long contactNumber;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "website")
+	private String website;
+	
+	@Column(name = "tax_number_or_ein")
+	private String taxNumberOrEin;
+	
+	@Column(name = "address")
+	private String address;
+	
+	private byte[] companyLogo;
+}

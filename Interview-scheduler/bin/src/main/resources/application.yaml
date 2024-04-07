@@ -1,0 +1,58 @@
+aes:
+  encryption:
+    key: this-is-test-key
+spring:
+  datasource:
+    url: jdbc:mysql://orivesolutionsdatabase-1.cmhjntg41ycm.ap-south-1.rds.amazonaws.com:3306/orivehrm
+    username: oriveadmin
+    password: orivedb2628
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: INTERVIEW-SCHEDULER
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#  security:
+#     oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8081/realms/springboot
+#          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs        
+        
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: smrutisouravmoharana222@gmail.com
+    password: fupp miod mpul bgfq
+    smtp:
+      connectiontimeout: 5000
+      timeout: 5000
+      writetimeout: 5000
+      auth: true
+      starttls:
+        enable: true
+      ssl:
+        enable: false
+    debug: true
+    
+server:
+  port: 8089
+#jwt:
+#  auth:
+#    converter:
+#      resource-id: keycloak-springboot
+#      principle-attribute: preferred_username
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka  

@@ -1,0 +1,5 @@
+package com.orive.Organisation.Dto;
+
+public class CompanyDto {
+
+}
